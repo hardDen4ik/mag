@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Bill', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'user_id',
             'teacher_id',
             'subject_id',
+            'grade',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

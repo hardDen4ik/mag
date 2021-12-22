@@ -33,8 +33,8 @@ class Test extends \yii\db\ActiveRecord
         return [
             [['question', 'answer', 'variants'], 'required'],
             [['question', 'subject_id'], 'default', 'value' => null],
-            [['question', 'subject_id'], 'integer'],
-            [['answer', 'variants'], 'string', 'max' => 255],
+            [['subject_id'], 'integer'],
+            [['question' ,'answer', 'variants'], 'string', 'max' => 255],
             [['subject_id'], 'exist', 'skipOnError' => true, 'targetClass' => Subject::className(), 'targetAttribute' => ['subject_id' => 'id']],
         ];
     }

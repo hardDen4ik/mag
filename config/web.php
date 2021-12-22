@@ -14,7 +14,22 @@ $config = [
     'modules' => [
         'user' => [
             'class' => 'app\modules\user\User'
-        ]
+        ],
+        'test' => [
+            'class' => 'app\modules\test\Test'
+        ],
+        'group' => [
+            'class' => 'app\modules\group\Group'
+        ],
+        'subject' => [
+            'class' => 'app\modules\subject\Subject'
+        ],
+        'book' => [
+            'class' => 'app\modules\book\Book'
+        ],
+        'bill' => [
+            'class' => 'app\modules\bill\Bill'
+        ],
     ],
     'components' => [
         'request' => [

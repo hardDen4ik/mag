@@ -14,8 +14,8 @@ use Yii;
  * @property float|null $grade
  *
  * @property Subject $subject
- * @property User $teacher
- * @property User $user
+ * @property UserMy $teacher
+ * @property UserMy $user
  */
 class Bill extends \yii\db\ActiveRecord
 {
@@ -37,8 +37,8 @@ class Bill extends \yii\db\ActiveRecord
             [['user_id', 'teacher_id', 'subject_id'], 'integer'],
             [['grade'], 'number'],
             [['subject_id'], 'exist', 'skipOnError' => true, 'targetClass' => Subject::className(), 'targetAttribute' => ['subject_id' => 'id']],
-            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
-            [['teacher_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['teacher_id' => 'id']],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => UserMy::className(), 'targetAttribute' => ['user_id' => 'id']],
+            [['teacher_id'], 'exist', 'skipOnError' => true, 'targetClass' => UserMy::className(), 'targetAttribute' => ['teacher_id' => 'id']],
         ];
     }
 
@@ -73,16 +73,16 @@ class Bill extends \yii\db\ActiveRecord
      */
     public function getTeacher()
     {
-        return $this->hasOne(User::className(), ['id' => 'teacher_id']);
+        return $this->hasOne(UserMy::className(), ['id' => 'teacher_id']);
     }
 
     /**
-     * Gets query for [[User]].
+     * Gets query for [[UserMy]].
      *
      * @return \yii\db\ActiveQuery
      */
     public function getUser()
     {
-        return $this->hasOne(User::className(), ['id' => 'user_id']);
+        return $this->hasOne(UserMy::className(), ['id' => 'user_id']);
     }
 }

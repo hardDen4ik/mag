@@ -18,6 +18,7 @@ class BillSearch extends Bill
     {
         return [
             [['id', 'user_id', 'teacher_id', 'subject_id'], 'integer'],
+            [['grade'], 'number'],
         ];
     }
 
@@ -61,6 +62,7 @@ class BillSearch extends Bill
             'user_id' => $this->user_id,
             'teacher_id' => $this->teacher_id,
             'subject_id' => $this->subject_id,
+            'grade' => $this->grade,
         ]);
 
         return $dataProvider;

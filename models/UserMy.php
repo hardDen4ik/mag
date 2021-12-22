@@ -36,6 +36,7 @@ class UserMy extends \yii\db\ActiveRecord
             [['role', 'group_id'], 'default', 'value' => null],
             [['role', 'group_id'], 'integer'],
             [['email', 'password'], 'string', 'max' => 255],
+            [['email'], 'email'],
         ];
     }
 
